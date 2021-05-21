@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="main">
+        <nav id="navbar">
+            <a href="#"><img src="./images/logo.png" alt="logo" id="navbar-logo"></a>
+            <ul id="navbar-ul">
+                <li class="navbar-li"><a href=# class="navbar-link">ROI Calculator</a></li>
+                <li class="navbar-li"><a href=# class="navbar-link">Investment Guide</a></li>
+                <li class="navbar-li"><a href=# class="navbar-link">Current Market</a></li>
+                <li class="navbar-li"><a href=# class="navbar-link">Past Return</a></li>
+                <li class="navbar-li"><a href=# class="navbar-link">About Us</a></li>
+            </ul>
+        </nav>
+        <section id="calculator">
+            <h1 id="calculator-h1">Investment Calculator</h1>
+            <p id="calculator-h1-p">Let's grow together</p>
+            <div id="calculator-input">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="input-label" for="invested">Amount Invested</label>
+                        </td>
+                        <td>
+                            <input type="number" class="input-box" placeholder="Enter invested amount..." id="invested">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="input-label" for="returned">Amount Returned</label>
+                        </td>
+                        <td>
+                            <input type="number" class="input-box" placeholder="Enter returned amount..." id="returned">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="input-label" for="time">Investment Length</label>
+                        </td>
+                        <td>
+                            <input type="number" class="input-box" placeholder="Enter years..." id="time">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <button id="calculate">Calculate</button>
+            <div id="result">
+                <h2 id="result-h2">Result</h2>
+                <p id="result-p">
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

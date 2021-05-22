@@ -139,3 +139,63 @@ td input {
   font-family: "Crimson Text", serif;
   color: #194350;
 }
+
+#about-us {
+  /* font-family: "Crimson Text", serif; */
+  display: flex;
+  flex-flow: column;
+  padding: 2em 3em;
+  text-align: justify;
+}
+
+#about-us-h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  margin: 0 auto 1em;
+  padding: 0;
+}
+
+#about-us-p {
+  font-size: 1.3em;
+  margin-bottom: 3em;
+}
+
+#about-us-profile {
+  display: flex;
+  justify-content: space-evenly;
+  /* width: 90%; */
+  margin: auto;
+}
+
+.about-us-profile-div {
+  display: flex;
+  flex-flow: column;
+  margin: 0 1.3em 2em;
+  border-radius: 30px;
+  padding: 1.5em 0;
+  background: #f3f4ed;
+}
+
+.about-us-img {
+  width: 266px;
+  padding: 0.4em;
+  border-radius: 50%;
+  margin: auto;
+
+  /* border: solid 0.5px black; */
+  background: white;
+}
+.about-us-p {
+  font-size: 1.4em;
+  margin: 0.5em 0;
+  text-align: center;
+  color: #424642;
+  font-weight: bold;
+}
+.about-us-p-des {
+  margin-top: 0.5em;
+  width: 80%;
+  margin: auto;
+  color: #536162;
+}

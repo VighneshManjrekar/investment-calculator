@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function s(id) {
         return document.getElementById(`${id}`)
     }
+
     s('calculate').addEventListener('click', calculate)
     function calculate() {
         var invested = s('invested').value
@@ -27,5 +28,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
     }
+
+
+
 
 })

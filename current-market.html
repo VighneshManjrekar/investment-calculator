@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <nav id="navbar">
+            <a href="./index.html"><img src="./images/logo.png" alt="logo" id="navbar-logo"></a>
+            <ul id="navbar-ul">
+                <li class="navbar-li"><a href="./index.html" class="navbar-link">ROI Calculator</a></li>
+                <li class="navbar-li"><a href="./investment-guide.html" class="navbar-link">Investment Guide</a></li>
+                <li class="navbar-li"><a href='current-market.html' class="navbar-link">Current Market</a></li>
+                <li class="navbar-li"><a href="./past-return.html" class="navbar-link">Past Return</a></li>
+                <li class="navbar-li"><a href="./about.html" class="navbar-link">About Us</a></li>
+            </ul>
+        </nav>
+        <section id="current-market">
+            <h1 id="current-market-h1">Current Market</h1>
+            <p id="current-market-h1-p">Live Indices</p>
+            <div id="current-market-table">
+                <table id="cm-table">
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+    fetch('https://ic-current-market.herokuapp.com/').then(data => { return data.json() }).then(res => {
+        function generateTable(table) {
+            for (let data of res.result) {
+                let rows = table.insertRow();
+                let cell1 = rows.insertCell(0);
+                let cell2 = rows.insertCell(1);
+                let cell3 = rows.insertCell(2);
+                let cell4 = rows.insertCell(3);
+                let cell5 = rows.insertCell(4);
+                let cell6 = rows.insertCell(5);
+                let cell7 = rows.insertCell(6);
+                cell1.innerHTML = data.name
+                cell2.innerHTML = data.currentVal
+                cell3.innerHTML = data.change
+                cell4.innerHTML = data.changePer
+                cell5.innerHTML = data.open
+                cell6.innerHTML = data.high
+                cell7.innerHTML = data.low
+            }
+        }
+        function headEle(table, data) {
+            let thead = table.createTHead()
+            let row = thead.insertRow()
+            for (let key of data) {
+                let th = document.createElement("th");
+                let text = document.createTextNode(key);
+                th.appendChild(text);
+                row.appendChild(th);
+            }
+
+        }
+        let table = document.getElementById('cm-table')
+        let data = ['Name', 'Current Value', 'Change', '%CHG', 'Open', 'High', 'low']
+        headEle(table, data)
+        generateTable(table)
+        var ele = document.getElementsByTagName('TD')
+        var i
+        for (i = 0; i <= ele.length; i++) {
+            if (i % 7 != 0) {
+                let data = ele[i].innerHTML
+                if (data < 0) {
+                    ele[i - 1].style.color = "red"
+                    ele[i].style.color = "red"
+                }
+            }
+        }
+    })
+</script>
+
+</html>

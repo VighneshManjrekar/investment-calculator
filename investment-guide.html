@@ -1,0 +1,119 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <nav id="navbar">
+            <a href="./index.html"><img src="./images/logo.png" alt="logo" id="navbar-logo"></a>
+            <ul id="navbar-ul">
+                <li class="navbar-li"><a href="./index.html" class="navbar-link">ROI Calculator</a></li>
+                <li class="navbar-li"><a href="./investment-guide.html" class="navbar-link">Investment Guide</a></li>
+                <li class="navbar-li"><a href='current-market.html' class="navbar-link">Current Market</a></li>
+                <li class="navbar-li"><a href="./past-return.html" class="navbar-link">Past Return</a></li>
+                <li class="navbar-li"><a href="./about.html" class="navbar-link">About Us</a></li>
+            </ul>
+        </nav>
+
+        <section id="investment-guide">
+            <div id="investment-guide-table">
+                <div class="ig-row">
+                    <label>Returns</label>
+                    <div class="ig-data">
+                        <input type="radio" id="low" name="returns" value="low">
+                        <label for="low">Low</label>
+                    </div>
+                    <div class="ig-data">
+                        <input type="radio" id="high" name="returns" value="high">
+                        <label for="high">High</label>
+                    </div>
+                </div>
+                <div class="ig-row">
+                    <label>Duration</label>
+                    <div class="ig-data">
+                        <input type="radio" id="long" name="duration" value="long">
+                        <label for="long">Long</label>
+                    </div>
+                    <div class="ig-data">
+                        <input type="radio" id="short" name="duration" value="short">
+                        <label for="short">Short</label>
+                    </div>
+                </div>
+                <p id="investment-guide-p">
+                    <span>Low Risk: <span id="span-low"></span></span>
+                    <span><a class="ig-link" id="ig-low-link" href="#">For more
+                            information follow the
+                            link</a></span><br>
+                    <span>High Risk: <span id="span-high"></span><a class="ig-link" id="ig-high-link" href="#">For more
+                            information follow the
+                            link</a></span>
+                </p>
+                <button id="investment-guide-btn">Calculate</button>
+            </div>
+
+        </section>
+    </div>
+</body>
+<script>
+    function s(id) {
+        return document.getElementById(`${id}`)
+    }
+
+    function guide() {
+        if ((s('low').checked != true && s('high').checked != true) || ((s('long').checked != true && s('short').checked != true))) {
+            alert('oops')
+        } else {
+            var ret
+            if (s('low').checked) {
+                ret = 'low'
+            } else {
+                ret = 'high'
+            }
+            var dura
+            if (s('long').checked) {
+                dura = 'long'
+            } else {
+                dura = 'short'
+            }
+            if (ret == 'low' && dura == 'short') {
+                s('span-low').innerHTML = 'Government Bonds'
+                s('ig-low-link').href = "https://groww.in/p/government-bonds/"
+
+                s('span-high').innerHTML = 'Cryptocurrency'
+                s('ig-high-link').href = "https://www.nerdwallet.com/article/investing/cryptocurrency-7-things-to-know"
+            } else if (ret == 'high' && dura == 'short') {
+                s('span-low').innerHTML = 'Cryptocurrency'
+                s('ig-low-link').href = "https://www.nerdwallet.com/article/investing/cryptocurrency-7-things-to-know"
+
+                s('span-high').innerHTML = 'Futures and options'
+                // ""<- yamadhe link tak 👇
+                // s('ig-high-link').href = "https://www.nerdwallet.com/article/investing/cryptocurrency-7-things-to-know"
+
+            } else if (ret == 'high' && dura == 'long') {
+                s('span-low').innerHTML = 'Stocks and Mutual Funds'
+                s('ig-low-link').href = "https://groww.in/p/"
+
+                s('span-high').innerHTML = 'Cryptocurrency'
+                s('ig-high-link').href = "https://www.nerdwallet.com/article/investing/cryptocurrency-7-things-to-know"
+            } else {
+                s('span-low').innerHTML = 'Gold, FDs, Real Estate, ETF'
+                s('ig-low-link').href = "https://groww.in/explore/gold"
+
+                s('span-high').innerHTML = 'Index funds, Mutual Funds'
+                s('ig-high-link').href = "https://groww.in/p/"
+            }
+            s('investment-guide-p').style.display = "block"
+        }
+    }
+    s('investment-guide-btn').addEventListener('click', guide)
+</script>
+
+</html>

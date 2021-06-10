@@ -131,14 +131,14 @@ td input {
   font-size: 1.2em;
 }
 
-#footer {
+/* #footer {
   width: 100%;
   text-align: center;
   background: #b8d0da;
   padding: 1em;
   font-family: "Crimson Text", serif;
   color: #194350;
-}
+} */
 
 #about-us {
   /* font-family: "Crimson Text", serif; */
@@ -198,4 +198,140 @@ td input {
   width: 80%;
   margin: auto;
   color: #536162;
+}
+
+/* investment-guide */
+#investment-guide {
+  width: 60%;
+  margin: 2em auto;
+  background: #a7c4bc;
+  border-radius: 10px;
+  padding: 1em 3em;
+}
+#investment-guide-table {
+  display: flex;
+  flex-flow: column;
+}
+
+.ig-row {
+  display: flex;
+  margin: 1em;
+  font-size: 1.5em;
+  justify-content: space-evenly;
+}
+.ig-data {
+  display: flex;
+  align-items: center;
+}
+.ig-data input {
+  margin-right: 0.8em;
+}
+#investment-guide-btn {
+  width: 140px;
+  font-family: "Crimson Text", serif;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #2f5d62;
+  color: white;
+  font-size: 1.2em;
+  padding: 0.6em 1em;
+  margin: 1em auto;
+}
+#investment-guide-btn:hover {
+  background: #2d423d;
+}
+#investment-guide-p {
+  margin: 1.2em 1.2em 0;
+  font-size: 1.3em;
+  display: none;
+}
+#span-low,
+#span-high {
+  display: inline-block;
+  margin-left: 0.8em;
+  margin-bottom: 1em;
+  color: #231e23;
+}
+.ig-link {
+  color: #2940d3;
+  margin-left: 10px;
+  text-decoration: none;
+}
+/* Currnent market */
+#current-market {
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  margin: auto;
+}
+#current-market-h1 {
+  font-weight: normal;
+  font-size: 2em;
+  margin-bottom: 0.1em;
+  text-align: center;
+}
+#current-market-h1-p {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.3em;
+}
+#cm-table {
+  width: 90%;
+  margin: 0 auto 2em;
+  border-collapse: collapse;
+  border: solid 0.4px black;
+  padding: 1em 2em;
+}
+#cm-table th {
+  text-align: center;
+  border: 1px solid gray;
+  background: #232323;
+  font-size: 1.4em;
+  padding: 8px;
+  color: #ffffff;
+  font-weight: normal;
+}
+#cm-table td {
+  border: 1px solid gray;
+  font-size: 1em;
+  padding: 0.5em;
+  text-align: center;
+}
+#cm-table td:nth-child(1) {
+  padding-left: 1em;
+  text-align: left;
+}
+#cm-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+#cm-table td:nth-child(2),
+#cm-table td:nth-child(3),
+#cm-table td:nth-child(4),
+#cm-table td:nth-child(5),
+#cm-table td:nth-child(6),
+#cm-table td:nth-child(7) {
+  text-align: center;
+  font-size: 1em;
+}
+
+/* past retunr */
+#past-return table {
+  width: 70%;
+  margin: auto;
+  border-collapse: collapse;
+}
+#past-return table th {
+  text-align: center;
+  border: 1px solid #233e8b;
+  background: #1eae98;
+}
+#past-return table td {
+  border: 1px solid #233e8b;
+  font-size: 1.3em;
+  padding: 0.5em;
+  text-align: center;
+}
+#past-return table tr:nth-child(even) {
+  background: #a9f1df;
 }
